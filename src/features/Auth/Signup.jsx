@@ -379,10 +379,13 @@ const Signup = () => {
               />
             </div>
           </div>
-          <div className="mb-6 flex flex-col items-end gap-4 md:flex-row">
+          <div className="mb-6 flex flex-row gap-4 md:flex-row">
             <input type="checkbox" name="terms" required />
             <label>
-              I agree to the <a href="#">Terms and Conditions</a>
+              I agree to the{" "}
+              <a className="underline" href="#">
+                Terms and Conditions
+              </a>
             </label>
           </div>
 
