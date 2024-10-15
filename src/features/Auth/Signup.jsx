@@ -6,20 +6,9 @@ import {
   Typography,
   Select,
   Option,
-  Popover,
-  PopoverHandler,
-  PopoverContent,
   DialogFooter,
   Button,
 } from "@material-tailwind/react";
-
-// day picker
-import { format } from "date-fns";
-import { DayPicker } from "react-day-picker";
-
-// @heroicons/react
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
-
 const Signup = () => {
   const [date, setDate] = React.useState();
 
