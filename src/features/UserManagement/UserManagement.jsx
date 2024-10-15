@@ -18,6 +18,8 @@ import {
   IconButton,
   Tooltip,
 } from "@material-tailwind/react";
+import Modal from "../../components/Modal";
+import { useState } from "react";
 
 const TABS = [
   {
@@ -85,6 +87,20 @@ const TABLE_ROWS = [
 ];
 
 const UserManagement = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleConfirm = () => {
+    console.log("Form submitted");
+    handleCloseModal(); // Close the modal after submission
+  };
+
   return (
     <div className="flex">
       <Sidebar />
@@ -104,9 +120,12 @@ const UserManagement = () => {
                 <Button variant="outlined" size="sm">
                   view all
                 </Button>
-                <Button className="flex items-center gap-3" size="sm">
-                  <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> Add
-                  member
+                <Button
+                  className="flex bg-primary1 items-center gap-3"
+                  size="sm"
+                  onClick={handleOpenModal}
+                >
+                  <UserPlusIcon strokeWidth={2} className=" h-4 w-4" /> Add user
                 </Button>
               </div>
             </div>
@@ -249,6 +268,22 @@ const UserManagement = () => {
           </CardFooter>
         </Card>
       </div>
+      <Modal
+        open={modalOpen}
+        onClose={handleCloseModal}
+        title="Add Member"
+        confirmText="Add"
+        onConfirm={handleConfirm}
+      >
+        {/* Form fields for adding a member */}
+        <div className="flex flex-col gap-4">
+          <Input label="Department" />
+          <Input label="Email" />
+          <Input type="email" label="Job Position" />
+          {/* <Input label="Organization" /> */}
+          {/* Add any other fields you need */}
+        </div>
+      </Modal>
     </div>
   );
 };
