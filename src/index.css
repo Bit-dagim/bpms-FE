@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.toggle-checkbox:checked {
+  @apply bg-blue-500;
+}
