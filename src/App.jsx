@@ -5,6 +5,8 @@ import Signup from "./features/Auth/Signup";
 import Sidebar from "./components/Sidebar";
 import UserManagement from "./features/UserManagement/UserManagement";
 import OTP from "./features/Auth/OTP";
+import Products from "./features/Products/Products";
+import Settings from "../src/views/Settings/Settings";
 const App = () => {
   return (
     <Router>
@@ -12,6 +14,9 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="Signup" element={<Signup />} />
         <Route path="UserManagement" element={<UserManagement />} />
+        <Route path="Products" element={<Products />} />
+        <Route path="Settings" element={<Settings />} />
+
         <Route path="Sidebar" element={<Sidebar />} />
         <Route path="OTP" element={<OTP />} />
       </Routes>
